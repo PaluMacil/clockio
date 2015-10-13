@@ -1,0 +1,36 @@
+body {
+	color: #FFFFFF;
+	background: #000000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-grow: 1;	
+	align-items: center;
+}
+
+.alarm-container {
+
+
+}
+
+.fa {
+	color:#FFFFFF;
+}
+
+.hidden {
+	display: none;
+}
+
+.digital {
+  font-family: 'Digital';
+}
+
+#clock .digital {
+	font-size: 4em;
+	
+}
+
+@font-face {
+  font-family: 'Digital';
+  src: url('digital-7%20(mono).ttf');
+}
