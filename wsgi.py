@@ -1,4 +1,3 @@
-__author__ = 'dan'
 from ladon.server.wsgi import LadonWSGIApplication
 from os.path import abspath, dirname
 

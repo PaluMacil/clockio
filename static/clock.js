@@ -26,7 +26,7 @@ var clock = {
 		clockTime.innerHTML = hours() + ":" + minutes + " " + AMPM();
 	},
 	start: function() {
-		setInterval(clock.setTime, 150);
+		setInterval(clock.setTime(), 150);
 	},
 	alarms: [],
 	loadAlarms: function() {
@@ -34,7 +34,7 @@ var clock = {
 		this.alarms.push(alarm);
 	}
 
-}
+};
 
 window.onload = function() {
 	clock.start();
@@ -42,5 +42,5 @@ window.onload = function() {
 	if (clock.alarms.length > 0) {
 		//alert( JSON.stringify(clock.alarms) );
 	}
-}
+};
 
