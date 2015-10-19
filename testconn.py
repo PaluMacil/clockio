@@ -1,8 +1,12 @@
 import psycopg2
+import os
 
-conn = psycopg2.connect("dbname='template1' user='dbuser' host='localhost' password='dbpass'")
+conn = psycopg2.connect(os.getenv('DB_ALARM_OWNER'))
 
 cur = conn.cursor()
+cur.execute('SELECT * FROM alarm.alarm')
+alarm = cur.fetchone()
+print(alarm)
 
 # http://hashrocket.com/blog/posts/faster-json-generation-with-postgresql
 # http://www.postgresql.org/docs/9.4/static/plpgsql-statements.html

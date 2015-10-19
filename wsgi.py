@@ -1,9 +1,3 @@
-from ladon.server.wsgi import LadonWSGIApplication
-from os.path import abspath, dirname
+from clockio import create_app
 
-
-path = dirname(abspath(__file__))
-application = LadonWSGIApplication('clockio',
-                                   path_list=path,
-                                   catalog_name='My Ladon webservice catalog',
-                                   catalog_desc='This is the root of my cool webservice catalog')
+application = create_app()
