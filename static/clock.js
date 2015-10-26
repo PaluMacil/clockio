@@ -1,3 +1,5 @@
+'use strict';
+
 var clock = {
 	DST: false,
 	timezone: "EST",
@@ -26,7 +28,8 @@ var clock = {
 		clockTime.innerHTML = hours() + ":" + minutes + " " + AMPM();
 	},
 	start: function() {
-		setInterval(clock.setTime(), 150);
+	    console.log('Setting setTime interval.');
+		setInterval(clock.setTime, 150);
 	},
 	alarms: [],
 	loadAlarms: function() {
@@ -37,6 +40,7 @@ var clock = {
 };
 
 window.onload = function() {
+	console.log('Starting clock.');
 	clock.start();
 	clock.loadAlarms();
 	if (clock.alarms.length > 0) {
@@ -44,3 +48,12 @@ window.onload = function() {
 	}
 };
 
+/* console shim*/
+(function () {
+    var f = function () {};
+    if (!window.console) {
+        window.console = {
+            log:f, info:f, warn:f, debug:f, error:f
+        };
+    }
+}());
